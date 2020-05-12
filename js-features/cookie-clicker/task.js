@@ -11,10 +11,9 @@ element.onclick = () => {
         dateFirst = dateClick;
     }
     else {
-        let lastInterval = (dateClick - dateFirst) / 1000;
-        console.log(lastInterval)        
-        let timeClick = 1 / lastInterval;    
-        console.log(`Кликов в секунду: ${timeClick.toFixed(1)}`)
+        let lastInterval = (dateClick - dateFirst) / 1000;              
+        let timeClick = 1 / lastInterval;
+        document.getElementById("clicker__timer").textContent = timeClick.toFixed(1);        
         dateFirst = dateClick;
     }      
 
