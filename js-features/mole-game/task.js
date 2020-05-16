@@ -17,8 +17,7 @@ for(i = 1; i < 9; i++){
                     hit = 0;
                     document.getElementById("dead").textContent = hit;
                 }
-            }
-        
+            }        
         }
         else if(!this.className.includes( 'hole_has-mole' )) {
             miss += 1;
@@ -33,8 +32,6 @@ for(i = 1; i < 9; i++){
                     document.getElementById("lost").textContent = miss;
                 }
             }        
-        }     
-        
-    }   
-    
+        }        
+    }    
 }
