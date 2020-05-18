@@ -1,3 +1,7 @@
+.inputLetter {
+  display: none;
+}
+
 .symbol {
   font-size: 50px;
 }
