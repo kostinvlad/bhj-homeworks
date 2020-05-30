@@ -5,6 +5,10 @@ body {
   display: flex;
 }
 
+#refresh {
+  margin-bottom: 20px;
+}
+
 .item__code {
   margin-right: 5px;
   font-weight: bold;
