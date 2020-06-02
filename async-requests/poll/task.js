@@ -44,8 +44,10 @@ sendRequest('GET', requestURL, body = null)
 function clickListener(data) {
     Array.from(document.getElementsByClassName("poll__answer")).forEach(element => {
         element.addEventListener('click', (event) => {
+            alert('Спасибо, ваш голос засчитан!');
             data += `&answer=${element.id}`            
             sendRequest('POST', requestURL, data)
+            
                 .then( (response) => {
                     console.log(response)
                 })
