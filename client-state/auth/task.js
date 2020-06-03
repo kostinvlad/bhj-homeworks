@@ -3,6 +3,12 @@ let requestURL = 'https://netology-slow-rest.herokuapp.com/auth.php'
 let formInputs = document.getElementById('signin__form')
 formDiv.classList.add("signin_active")
 
+if(localStorage.getItem('id_person')){
+    document.getElementById('user_id').innerText = localStorage.getItem('id_person')
+    formDiv.classList.remove("signin_active")
+    document.getElementById('welcome').classList.add('welcome_active')
+}
+
 document.getElementById('signin__btn').addEventListener('click', (e) => {
     let form = new FormData( document.getElementById('signin__form') )
     document.getElementById('welcome').classList.remove('welcome_active')
@@ -17,6 +23,7 @@ document.getElementById('signin__btn').addEventListener('click', (e) => {
             document.getElementById('user_id').innerText = xhr.response.user_id
             formDiv.classList.remove("signin_active")
             document.getElementById('welcome').classList.add('welcome_active')
+            localStorage.setItem('id_person', JSON.stringify(xhr.response.user_id))
         }
         else {
             alert('Неверный логин/пароль')
